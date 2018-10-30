@@ -4,4 +4,6 @@ front-end theme by fun-wiki.ru site
 
 ## TO-DO
 
-- [ ] - fix mobile view
+-   [x] -   fix mobile view
+-   [ ] -   authors page review
+-   [ ] -   critical CSS inline
