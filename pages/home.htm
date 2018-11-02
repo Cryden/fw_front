@@ -6,8 +6,6 @@ layout = "default"
 is_hidden = 0
 
 ==
-use Cms\Classes\Theme;
-
 function onStart()
 {
     $this['page_title'] = "Главная";
@@ -21,6 +19,9 @@ function onStart()
       "type" => 'webpage',
       "url" =>  Request::url(),
     ];
+    
+    // Shema.org
+     $this['shema_type'] = "shema/website";
 
 }
 ==
