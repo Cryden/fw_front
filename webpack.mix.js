@@ -1,30 +1,31 @@
 let mix = require('laravel-mix');
 
-mix.setPublicPath('assets')
+mix
+    .setPublicPath('assets')
     .setResourceRoot('../')
 
-mix.js('./source/js/main.js', 'js')
-  .sass('./source/sass/styles.sass', 'css')
-  .options({
-    processCssUrls: true
-  })
+    .js('./source/js/main.js', 'js')
+    .sass('./source/sass/styles.sass', 'css')
+    .options({
+        processCssUrls: true
+    })
    
-mix.browserSync({
-    proxy: 'fw.octobercms.loc',
-    host: 'localhost',
-    port: 8000,
-    files: [
-      '**/*.htm',
-      'assets/js/**/*.js',
-      {
-        match: ['assets/css/**/*.css'],
-        fn: function (event, file) {
-            this.reload()
+    .browserSync({
+        proxy: 'fw.octobercms.loc',
+        host: 'localhost',
+        port: 8000,
+        files: [
+        '**/*.htm',
+        'assets/js/**/*.js',
+        {
+            match: ['assets/css/**/*.css'],
+            fn: function (event, file) {
+                this.reload()
+            }
         }
-      }
-    ],
-    injectChanges: true
-  })
+        ],
+        injectChanges: true
+    })
 
 // Full API
 // mix.js(src, output);
