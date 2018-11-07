@@ -8,6 +8,9 @@ use Fw\Backend\Models\Person as Person;
 
 function onStart()
 {
+    // Template
+    $this['template'] = "two-columns";
+    
     $this['page_title'] = "Авторы";
 
     $this['records'] = Person::where('is_author', '=', 1)->orderBy('title', 'asc')->get();
@@ -40,15 +43,11 @@ function onStart()
       </div>
     </div>
 
-    <div class="page__sidebar">
+    <div class="page__sidebardown">
       {% if sidebar is defined %}
       {% partial sidebar data=record %}
       {% endif %}
     </div>
-
-    {% partial 'layout/advertisment-sidebar' %}
-
-    <div class="page__add-sidebar"></div>
 
   </div>
 </div>
