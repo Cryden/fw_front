@@ -67,7 +67,7 @@ function onStart()
                         {% if record.persons is not empty %}
                         <div class="infostring">Псевдонимы:
                             {% for person in record.persons %}
-                            <b>{{ person.title|person }}</b>
+                            <b>{{ person.title|person }}{% if !loop.last %}, {% endif %}</b>
                             {% endfor %}
                         </div>
                         {% endif %}
@@ -90,7 +90,7 @@ function onStart()
 
                 {% endif %}
 
-                {% if record.universes %}
+                {% if record.universes is not empty %}
                     <section id="universe">
                         <h2>Вселенные</h2>
                         <div class="card_list">
