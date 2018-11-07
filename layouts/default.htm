@@ -11,57 +11,65 @@ security = "all"
 <html lang="ru" prefix="og: http://ogp.me/ns#">
 
 <head>
-  <meta charset="utf-8">
-  <title>{{ page_title }} | Энциклопедия фантастических вселенных</title>
-  <meta name="description" content="{{ page_description }}">
-  <meta name="title" content="{{ shema_type }}">
-  <meta name="author" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="OctoberCMS">
-  <meta name="yandex-verification" content="e3c30139329d41e4" />
-  <meta name="wot-verification" content="d2421154f7fbe7d04b0c"/>
-  <meta name="verify-admitad" content="10cfd8479d" />
-  {% partial "og_meta" %}
-  {% partial "favicon" %}
-  <link rel="manifest" href="../manifest.json">
-  <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i&amp;subset=cyrillic-ext" rel="stylesheet">
-  <link rel="stylesheet" href="{{ 'assets/css/styles.css'|theme }}">
-  {% styles %}
+    <meta charset="utf-8">
+    <title>{{ page_title }} | Энциклопедия фантастических вселенных</title>
+    <meta name="description" content="{{ page_description }}">
+    <meta name="title" content="{{ shema_type }}">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="OctoberCMS">
+    {% partial "verification" %}
+    {% partial "og_meta" %}
+    {% partial "favicon" %}
+    <link rel="manifest" href="../manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i&amp;subset=cyrillic-ext"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ 'assets/css/styles.css'|theme }}">
+    {% styles %}
 
 </head>
 
 <body>
-  <div id="app" class="wrapper">
-    <header>
-      {% partial 'layout/site-logo' %}
-      {% partial 'layout/main-menu' %}
-    </header>
+    <div id="app" class="wrapper">
+        <header>
+            {% partial 'layout/site-logo' %}
+            {% partial 'layout/main-menu' %}
+        </header>
 
-    <main>
-      {% partial 'layout/nav-menu' %}
+        <main>
+            {% partial 'layout/nav-menu' %}
 
-      {% page %}
+            {% page %}
 
-      <div class="page__footer">
-        {% partial 'layout/social' %}
-      </div>
-    </main>
-    <footer>
-      {% partial 'layout/site-copyright' %}
-      {% partial 'layout/footer-menu' %}
-    </footer>
-  </div>
-  <div class="overlay"></div>
+            {% if template == "two-columns" %}
+                {% partial 'layout/two-columns' %}
+            {% endif %}
 
-  {% if shema_type is defined %}
-  {% partial shema_type %}
-  {% endif %}
+            {% if template == "one-column" %}
+                {% partial 'layout/one-column' %}
+            {% endif %}
 
-  <script src="{{ 'assets/js/main.js'|theme }}"></script>
-  {% partial "googletag" %}
-  {% scripts %}
+            <div class="page__footer">
+                {% partial 'layout/social' %}
+            </div>
+        </main>
+        
+        <footer>
+            {% partial 'layout/site-copyright' %}
+            {% partial 'layout/footer-menu' %}
+        </footer>
+    </div>
+    <div class="overlay"></div>
+
+    {% if shema_type is defined %}
+    {% partial shema_type %}
+    {% endif %}
+
+    <script src="{{ 'assets/js/main.js'|theme }}"></script>
+    {% partial "googletag" %}
+    {% scripts %}
 
 </body>
 

@@ -1,20 +1,23 @@
+;;
+
 title = "title"
 url = "/title"
 layout = "default"
 is_hidden = 0
+
 ==
+
 <?php
 use Fw\Backend\Models\Person as Person;
 
 function onStart()
 {
-    $this['page_title'] = "Авторы";
-
-    $this['records'] = Person::where('is_author', '=', 1)->orderBy('title', 'asc')->get();
-
 }
 ?>
+
 ==
+{##}
+
 {% partial 'layout/page-title' %}
 <div class="page__main">
   <div class="two-columns">
