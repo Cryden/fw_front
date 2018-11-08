@@ -1,9 +1,12 @@
+;;
+
 title = "authors"
 url = "/authors"
 layout = "default"
 is_hidden = 0
+
 ==
-<?php
+
 use Fw\Backend\Models\Person as Person;
 
 function onStart()
@@ -14,46 +17,30 @@ function onStart()
     $this['page_title'] = "Авторы";
 
     $this['records'] = Person::where('is_author', '=', 1)->orderBy('title', 'asc')->get();
-
 }
-?>
+
 ==
+{##}
+
 {% partial 'layout/page-title' %}
 
 {% put content %}
-        {% set last_char = '' %}
-        {% for record in records %}
-          {% set this_char = record.title|first|upper %}
-          {% if this_char != last_char %}
+    {% set last_char = '' %}
+    {% for record in records %}
+        {% set this_char = record.title|first|upper %}
+        {% if this_char != last_char %}
             {% if last_char != '' %}
-              </div>
+                </div>
             {% endif %}
-            {% set last_char = this_char%}
+            {% set last_char = this_char %}
             <h2> {{ this_char }} </h2>
             <div class="list">
-          {% endif %}
-          <div class="list_item">
+        {% endif %}
+        <div class="list_item">
             <a href="/author/{{record.slug}}">
-              {{ record.title }}
+                {{ record.title }}
             </a>
-          </div>
-        {% endfor %}
+        </div>
+    {% endfor %}
+    </div>
 {% endput %}
-
-<div class="page__main">
-  <div class="two-columns">
-    <div class="page__content">
-      <div class="page__main-content">
-
-      </div>
-    </div>
-
-    <div class="page__sidebardown">
-      {% if sidebar is defined %}
-      {% partial sidebar data=record %}
-      {% endif %}
-    </div>
-
-  </div>
-</div>
-</div>

@@ -10,30 +10,30 @@ use fw\Backend\Models\Person as Person;
 
 function onStart()
 {
-// Template
-$this['template'] = "two-columns";
+    // Template
+    $this['template'] = "two-columns";
 
-// Get record
-$this['record'] = Person::where('slug', '=', $this->param('slug'))->first();
+    // Get record
+    $this['record'] = Person::where('slug', '=', $this->param('slug'))->first();
 
-if ($this['record']->is_pseudo ) {
-    return Redirect::to('author/'.$this['record']->pseudos[0]->slug);
-}
+    if ($this['record']->is_pseudo ) {
+        return Redirect::to('author/'.$this['record']->pseudos[0]->slug);
+    }
 
-// SEO title
-$this['page_title'] = $this['record']->title;
+    // SEO title
+    $this['page_title'] = $this['record']->title;
 
-// Shema.org properties
-$this['shema_type'] = "person/shema";
+    // Shema.org properties
+    $this['shema_type'] = "person/shema";
 
-// og_meta properties
-$this['og_meta'] = [
-"title" => $this['record']->title,
-"description" => $this['record']->bio,
-"image" => Url::to('storage/app/media',$this['record']->photo),
-"type" => '',
-"url" => Request::url(),
-];
+    // og_meta properties
+    $this['og_meta'] = [
+        "title" => $this['record']->title,
+        "description" => $this['record']->bio,
+        "image" => Url::to('storage/app/media',$this['record']->photo),
+        "type" => '',
+        "url" => Request::url(),
+    ];
 
 }
 

@@ -1,13 +1,19 @@
+;;
+
 title = "universe"
 url = "/:slug"
 layout = "default"
 is_hidden = 0
+
 ==
-<?php
+
 use Fw\Backend\Models\Universe as Universe;
 
 function onStart()
 {
+    // Template
+    $this['template'] = "two-columns";
+
     // Get record
     $this['record'] = Universe::where('slug', '=', $this->param('slug'))->first();
 
@@ -33,7 +39,7 @@ function onStart()
     // Sidebar
     $this['sidebar'] = "person/author/sidebar";
 }
-?>
+
 ==
 {##}
 
@@ -46,22 +52,11 @@ function onStart()
     <img src="{{ record.logo|media }}" alt="{{ record.name }} logo">
   </div>
 </div>
-<div class="page__main">
-  <div class="two-columns">
-    <div class="page__content">
 
-      <div class="page__main-content">
-        {% partial 'universe/main' %}
-      </div>
+{% put content %}
+    {% partial 'universe/main' %}
+{% endput %}
 
-      <div class="page__sidebar">
-        {% partial 'universe/info' %}
-      </div>
-
-      {% partial 'layout/advertisment-sidebar' %}
-
-      <div class="page__add-sidebar"></div>
-
-    </div>
-  </div>
-</div>
+{% put sidebarup %}
+    {% partial 'universe/info' %}
+{% endput %}

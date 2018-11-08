@@ -6,59 +6,47 @@ layout = "default"
 is_hidden = 0
 
 ==
+
 use fw\Backend\Models\Universe as Universe;
 
 function onStart()
 {
-$this['page_title'] = "Вселенные";
-$this['records'] = Universe::orderBy('name', 'asc')->get();
+    $this['template'] = "two-columns";
+    
+    $this['page_title'] = "Вселенные";
+    $this['records'] = Universe::orderBy('name', 'asc')->get();
 }
+
 ==
 {##}
 
 {% partial 'layout/page-title' %}
-<div class="page__main">
-  <div class="two-columns">
-    <div class="page__content">
-      <div class="page__main-content">
-        {% set last_char = '' %}
-        {% for record in records %}
-          {% set this_char = record.name|first|upper %}
-          {% if this_char != last_char %}
+
+{% put content %}
+    {% set last_char = '' %}
+    {% for record in records %}
+        {% set this_char = record.name|first|upper %}
+        {% if this_char != last_char %}
             {% if last_char != '' %}
-              </div>
+                </div>
             {% endif %}
             {% set last_char = this_char%}
             <h2> {{ this_char }} </h2>
             <div class="card_list">
-          {% endif %}
-          <div class="card-item card">
+        {% endif %}
+        <div class="card-item card">
             <div class="">
-              <a href="/{{ record.slug }}">
-                <div class="card__image">
-                  <img src="{{ record.cover|media|resize(530) }}" alt="{{ record.name }}" />
-                </div>
-                <div class="card__content">
-                  <h4>{{ record.name }}</h4>
-                  <div class="h4-subtitle"> {{ record.name_translate }} </div>
-                </div>
-              </a>
+                <a href="/{{ record.slug }}">
+                    <div class="card__image">
+                        <img src="{{ record.cover|media|resize(530) }}" alt="{{ record.name }}" />
+                    </div>
+                    <div class="card__content">
+                        <h4>{{ record.name }}</h4>
+                        <div class="h4-subtitle"> {{ record.name_translate }} </div>
+                    </div>
+                </a>
             </div>
-          </div>
-        {% endfor %}
-      </div>
+        </div>
+    {% endfor %}
     </div>
-
-    <div class="page__sidebar">
-      {% if sidebar is defined %}
-      {% partial sidebar data=record %}
-      {% endif %}
-    </div>
-
-    {% partial 'layout/advertisment-sidebar' %}
-
-    <div class="page__add-sidebar"></div>
-
-  </div>
-</div>
-</div>
+{% endput %}
