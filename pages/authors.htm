@@ -16,7 +16,9 @@ function onStart()
 
     $this['page_title'] = "Авторы";
 
-    $this['records'] = Person::where('is_author', '=', 1)->orderBy('title', 'asc')->get();
+    $this['records'] = Person::whereHas('personroles', function($query) {
+        $query->where('slug', '=', 'author');
+    })->orderBy('title', 'asc')->get();
 }
 
 ==
