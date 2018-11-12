@@ -5,5 +5,5 @@ front-end theme by fun-wiki.ru site
 ## TO-DO
 
 -   [x] -   fix mobile view
--   [ ] -   authors page review
--   [ ] -   critical CSS inline
+-   [x] -   authors page review
+-   [x] -   critical CSS inline

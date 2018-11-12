@@ -26,7 +26,8 @@ security = "all"
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i&amp;subset=cyrillic-ext"
         rel="stylesheet">
-    <link rel="stylesheet" href="{{ 'assets/css/styles.css'|theme }}">
+    {# <link rel="stylesheet" href="{{ 'assets/css/styles.css'|theme|inline }}"> #}
+    <style>{{ [ 'assets/css/styles.css' ]|inline }}</style>
     {% styles %}
 
 </head>
