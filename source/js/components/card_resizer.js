@@ -19,8 +19,8 @@ function card_resize() {
   }
   width = (list_width / column_min)
 
-  $('.card_item').css('max-width', width);
-  $('.card_item').css('min-width', width);
+  $('.card-item').css('max-width', width);
+  $('.card-item').css('min-width', width);
 }
 
 function list_resize() {
