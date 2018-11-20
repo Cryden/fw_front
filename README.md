@@ -7,3 +7,5 @@ front-end theme by fun-wiki.ru site
 -   [x] -   fix mobile view
 -   [x] -   authors page review
 -   [x] -   critical CSS inline
+
+v 0.0.1
