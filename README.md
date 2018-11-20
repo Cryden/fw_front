@@ -1,11 +1,15 @@
-# fun-wiki
+# Энциклопедия фантастических вселенных
 
-front-end theme by fun-wiki.ru site
+### fun-wiki.ru by CRYDEsigN, current verson 1.0.5
+---
 
-## TO-DO
+## TO-DO 
 
--   [x] -   fix mobile view
--   [x] -   authors page review
--   [x] -   critical CSS inline
+### frontend 
 
-v 0.0.1
+-   [ ] -   add contact page
+-   [ ] -   add organization page
+
+### backend
+
+-   [ ] -   add organization
