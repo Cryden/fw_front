@@ -1,0 +1,79 @@
+;;
+
+title = "organisation"
+url = "/organisations/:slug"
+layout = "default"
+is_hidden = 0
+
+==
+use fw\Backend\Models\Organisation as Organisation;
+
+function onStart()
+{
+    // Template
+    $this['template'] = "two-columns";
+
+    // Get record
+    $this['record'] = Organisation::where('slug', '=', $this->param('slug'))->first();
+
+    // SEO title
+    $this['page_title'] = $this['record']->title;
+
+    // Shema.org properties
+    // $this['shema_type'] = "person/shema";
+
+    // og_meta properties
+    $this['og_meta'] = [
+        "title" => $this['record']->title,
+        "description" => $this['record']->description,
+        "image" => Url::to('storage/app/media',$this['record']->logo),
+        "type" => '',
+        "url" => Request::url(),
+    ];
+
+}
+
+==
+{##}
+
+{% partial 'layout/page-title' %}
+
+{% put content %}
+    {% if record %}
+        <div class="person">
+            <div class="person__info">
+                <h1> {{ record.name }} </h1>
+                <div class="subtitle">
+                    {% if record.name_ru is not empty %}
+                        {{ record.name_ru }}
+                    {% endif %}
+                </div>
+
+                <div class="infostring">Дата основания:
+                    <b>{{ record.open_date|ru_date }}</b>
+                </div>
+                {% if record.closed_date %}
+                    <div class="infostring">Дата закрытия:
+                        <b>{{ record.closed_date|ru_date }}</b>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="person__photo">
+                <img src="{{ record.logo|media }}" />
+            </div>
+        </div>
+
+        <h2>Информация об организации</h2>
+        {{ record.description|raw }}
+
+    {% endif %}
+
+{% endput %}
+
+{% put sidebarup %}
+    
+{% endput %}
+
+{% put sidebardown %}
+
+{% endput %}
