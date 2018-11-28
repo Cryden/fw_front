@@ -9,7 +9,9 @@
 
 -   [ ] -   add contact page
 -   [ ] -   add organization page
+-   [ ] -   redesign fronend theme
 
 ### backend
 
 -   [x] -   add organization
+-   [ ] -   add RSS feed
