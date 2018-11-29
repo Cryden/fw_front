@@ -3,18 +3,17 @@ h1
     display: inline-block
     color: $color-main
     font-weight: 600
-    font-size: 18px
-    margin-top: 20px
-    margin-bottom: 20px
+    font-size: 20px
   +tablet
     font-size: 24px
   +laptop
+    heigh: 40px
+    line-height: 40px
     font-size: 32px
-    margin-top: 40px
-    margin-bottom: 40px    
-
 
 h2 
+  +mobile 
+    font-size: 18px
   +default
     color: $color-main
     font-size: 24px
@@ -30,6 +29,8 @@ h2
     position: absolute
 
 h3
+  +mobile
+    font-size: 14px
   +default
     height: 27px
     line-height: 22px
@@ -58,13 +59,9 @@ h4
   +default
     height: 20px
     line-height: 20px
-    margin-top: -15px
-    margin-bottom: 20px
     color: $color-main-light
     font-size: 14px
   +laptop
-    margin-bottom: 40px
-    margin-top: -30px
     font-size: 18px
 
 .h4-subtitle

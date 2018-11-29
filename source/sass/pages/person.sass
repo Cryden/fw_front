@@ -1,10 +1,86 @@
 .person 
-  display: flex
-  flex-direction: row
-  width: 100%
-  justify-content: space-between
+  +mobile 
+    display: flex
+    flex-direction: column
+  +laptop 
+    display: grid
+    grid-template-columns: 250px 30px auto
+  +desktop
+    grid-template-columns: 300px 40px auto
+    grid-template-rows: auto
+    width: 100%
+
+
+  .subtitle 
+    +default
+      margin-top: 5px
+      margin-bottom: 5px
+
+  &__title
+    +mobile 
+      margin-top: 20px
+    +default
+      grid-column-start: 3
+      grid-row-start: 1
+
   &__info
-    h1
+    +laptop
+      grid-column-start: 1
+      grid-row-start: 1
+      grid-row-end:  3
+      flex-direction: column
+    &--sticky
+      +default 
+        margin-top: 20px
+        margin-bottom: 20px
+        position: relative
+        top: 0
+        display: flex
+        flex-wrap: wrap
+        flex-direction: row
+      +tablet 
+        margin: 0
+      +laptop
+        position: sticky
+        top: 40px
+
+  &__description
+    +default
+      grid-column-start: 3
+      grid-row-start: auto
+
+  &-role 
+    +mobile 
       margin-top: 0
-  &__photo
-    max-width: 150px
+      margin-bottom: 0
+      font-size: 14px
+    +default
+      display: inline-block
+      height: 24px
+      line-height: 24px
+      font-size: 18px
+      color: $color-main
+      width: 100%
+      margin-top: 20px
+      margin-bottom: 20px
+  &-photo
+    +mobile 
+      width: 100%
+      margin: 0
+    +tablet 
+      max-width: 200px
+      margin-right: 20px
+    +laptop 
+      margin: 0
+      min-width: 250px
+      max-width: 250px
+    +desktop
+      min-width: 300px
+      max-width: 300px
+    img 
+      width: 100%
+  &-info 
+      +default
+        margin-top: 30px
+
+    
