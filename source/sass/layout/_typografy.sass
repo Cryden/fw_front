@@ -1,7 +1,7 @@
 h1
   +default
     display: inline-block
-    color: $color-main-dark
+    color: $color-main
     font-weight: 600
     font-size: 18px
     margin-top: 20px
@@ -9,33 +9,42 @@ h1
   +tablet
     font-size: 24px
   +laptop
+    font-size: 32px
     margin-top: 40px
     margin-bottom: 40px    
 
 
 h2 
   +default
-    color: $color-main-dark
-    font-size: 20px
-    font-weight: 400
-    height: 60px
-    line-height: 44px
+    color: $color-main
+    font-size: 24px
+    font-weight: 600
+    height: 45px
+    line-height: 33px
+    margin-bottom: 20px
   &::before
     content: ''
-    border-bottom: 4px solid $color-second-light
-    width: 20px
-    height: 44px
+    border-bottom: 4px solid $color-second
+    width: 40px
+    height: 45px
     position: absolute
 
 h3
   +default
-    height: 20px
-    line-height: 20px
-    color: $color-main-dark
+    height: 27px
+    line-height: 22px
+    color: $color-main
     font-size: 16px
-    margin-top: 20px
     margin-bottom: 20px
-    font-weight: 400
+    font-weight: 600
+    text-transform: uppercase
+    border-bottom: 1px solid #E5E7EA
+  &::before
+    content: ''
+    border-bottom: 1px solid $color-main
+    width: 40px
+    height: 27px
+    position: absolute
 
 h4 
   +default
