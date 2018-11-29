@@ -1,9 +1,14 @@
 .main-menu
+  a 
+    width: 100%
+    color: $color-main-light
   +default
     max-width: 100%
     display: flex
     flex-direction: column
     padding-bottom: 60px
+  +mobile
+    padding-top: 120px
   &__item
     +default
       height: 50px
@@ -14,6 +19,7 @@
       color: $color-main-light
       text-decoration: none
       line-height: 50px
+      font-size: 18px
   &__item-dropdown
     +default
       min-width: 100%
@@ -25,8 +31,8 @@
       margin: 15px 20px 15px 20px
   &__icon-dropdown
     +default
-      font-size: 12px
-      margin: 22px 20px 
+      font-size: 16px
+      margin: 18px 20px 
       color: $color-second
       transition: width .5s, height .5s, background-color .5s, transform .5s
       margin-left: auto
@@ -57,16 +63,8 @@
       +default
         background-color: rgba(0, 0, 0, 0.02)
     
-  span
-    +default
-      font-size: 16px
-      color: $color-main-light
-      line-height: 50px
-      display: flex
-      width: 100%
-      margin-left: 20px
-
   .active
     +default
-      background: url("../images/left-menu-hover.png") repeat-y
-      color: $color-main-light
+      background: url("../images/left-menu-hover.png") repeat-y 
+    a 
+      color: $color-main
