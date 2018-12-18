@@ -1,23 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Creator: CorelDRAW X8 -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="22.236mm" height="10.5834mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 140 67"
- xmlns:xlink="http://www.w3.org/1999/xlink">
- <defs>
-  <style type="text/css">
-   <![CDATA[
-    .fil0 {fill:red}
-    .fil1 {fill:#666666;fill-rule:nonzero}
-   ]]>
-  </style>
- </defs>
- <g id="Layer_x0020_1">
-  <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_694039320">
-   <path class="fil0" d="M67 67l-16 0 0 -14 16 0 0 14zm-25 0l-42 0 0 -67c22,0 45,0 67,0 0,0 0,15 0,31l-25 0 0 36zm25 -29l0 9 -16 0 0 -9 16 0zm0 -38l0 0z"/>
-   <polygon class="fil1" points="109,31 118,31 131,54 131,31 140,31 140,67 131,67 118,45 118,67 109,67 "/>
-   <path class="fil1" d="M74 31l8 0 0 20c0,4 1,7 6,7 4,0 6,-3 6,-7l0 -20 9 0 0 20c-1,10 -6,16 -15,16 -9,0 -14,-6 -14,-16l0 -20z"/>
-  </g>
- </g>
+<svg id="logo" xmlns="http://www.w3.org/2000/svg" width="83.508" height="40" viewBox="0 0 83.508 40">
+  <path id="Path_1" data-name="Path 1" d="M39.7,39.636H0V0H39.7V19.818l-4.671,4.663H24.523v3.5H31.53l-3.5,3.5h-3.5v3.5l-4.671,4.663V19.818H39.7Z" fill="#ff7070" fill-rule="evenodd"/>
+  <path id="Path_2" data-name="Path 2" d="M18.079-14.991V-2.145a7.406,7.406,0,0,1-.984,3.856A6.407,6.407,0,0,1,14.25,4.25a10.174,10.174,0,0,1-4.4.883A8.424,8.424,0,0,1,3.9,3.171,6.961,6.961,0,0,1,1.784-2.2V-14.991h4.2V-2.838A5.09,5.09,0,0,0,6.9.53,3.839,3.839,0,0,0,9.959,1.6,3.753,3.753,0,0,0,12.953.523a5.117,5.117,0,0,0,.93-3.388V-14.991ZM40.552,4.861H35.2L26.566-10.157h-.122q.258,3.979.258,5.676V4.861H22.94V-14.991H28.25L36.872-.122h.1q-.2-3.87-.2-5.472v-9.4h3.789Z" transform="translate(42.956 34.867)" fill="#506070"/>
 </svg>

@@ -1,0 +1,56 @@
+@font-face {
+	font-family: "iconfont";
+	src: url("iconfont.eot?8dd8ec8cc141747dfd531ddff6697d6d?#iefix") format("embedded-opentype"),
+url("iconfont.woff2?8dd8ec8cc141747dfd531ddff6697d6d") format("woff2"),
+url("iconfont.woff?8dd8ec8cc141747dfd531ddff6697d6d") format("woff"),
+url("iconfont.ttf?8dd8ec8cc141747dfd531ddff6697d6d") format("truetype"),
+url("iconfont.svg?8dd8ec8cc141747dfd531ddff6697d6d#iconfont") format("svg");
+}
+
+.icon {
+	line-height: 1;
+}
+
+.icon:before {
+	font-family: iconfont !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+.icon-book:before {
+	content: "\f101";
+}
+.icon-comic:before {
+	content: "\f102";
+}
+.icon-dropdown:before {
+	content: "\f103";
+}
+.icon-game:before {
+	content: "\f104";
+}
+.icon-in_progress:before {
+	content: "\f105";
+}
+.icon-info:before {
+	content: "\f106";
+}
+.icon-news:before {
+	content: "\f107";
+}
+.icon-persons:before {
+	content: "\f108";
+}
+.icon-tvseries:before {
+	content: "\f109";
+}
+.icon-universe:before {
+	content: "\f10a";
+}
+.icon-video:before {
+	content: "\f10b";
+}
+.icon-videogame:before {
+	content: "\f10c";
+}

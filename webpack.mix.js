@@ -1,5 +1,24 @@
 let mix = require('laravel-mix');
 
+const webfontsGenerator = require('webfonts-generator');
+
+var globule = require('globule');
+var filepaths = globule.find('./source/images/icons/*.svg');
+
+webfontsGenerator({
+    files: filepaths,
+    dest: './source/fonts/iconfont',
+    types: ['eot', 'woff2', 'woff', 'ttf', 'svg'],
+    html: true,
+}, function (error) {
+    if (error) {
+        console.log('Fail!', error);
+    } else {
+        console.log('Done!');
+    }
+})
+
+
 mix
     .setPublicPath('assets')
     .setResourceRoot('../')
@@ -9,20 +28,20 @@ mix
     .options({
         processCssUrls: true
     })
-   
+
     .browserSync({
         proxy: 'fw.octobercms.loc',
         host: 'localhost',
         port: 8000,
         files: [
-        '**/*.htm',
-        'assets/js/**/*.js',
-        {
-            match: ['assets/css/**/*.css'],
-            fn: function (event, file) {
-                this.reload()
+            '**/*.htm',
+            'assets/js/**/*.js',
+            {
+                match: ['assets/css/**/*.css'],
+                fn: function (event, file) {
+                    this.reload()
+                }
             }
-        }
         ],
         injectChanges: true
     })
