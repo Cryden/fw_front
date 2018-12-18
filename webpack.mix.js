@@ -45,6 +45,7 @@ mix
         ],
         injectChanges: true
     })
+    .version()
 
 // Full API
 // mix.js(src, output);

@@ -10,6 +10,7 @@
 -   [ ] -   add contact page
 -   [ ] -   add organization page
 -   [ ] -   redesign fronend theme
+-   [ ] -   google tag setup (yMetrika and other)
 
 ### backend
 

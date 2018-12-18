@@ -1,14 +1,11 @@
 .main-menu
   a 
-    width: 100%
-    color: $color-main-light
-  +default
-    max-width: 100%
-    display: flex
-    flex-direction: column
-    padding-bottom: 60px
-  +mobile
-    padding-top: 120px
+    +default
+      width: 100%
+      color: $color-main-light
+      max-width: 100%
+      display: flex
+      flex-direction: row
   &__item
     +default
       height: 50px
@@ -28,11 +25,11 @@
     +default
       font-size: 20px
       width: 20px
-      margin: 15px 20px 15px 20px
+      margin: 0 20px
   &__icon-dropdown
     +default
       font-size: 16px
-      margin: 18px 20px 
+      margin: 0 20px 
       color: $color-second
       transition: width .5s, height .5s, background-color .5s, transform .5s
       margin-left: auto
@@ -53,10 +50,10 @@
 
       &>.main-menu__item
         +default 
-          padding-left: 60px
+          padding-left: 20px
       &>.inner>.main-menu__item 
         +default
-          padding-left: 100px
+          padding-left: 20px
 
   li
     &:hover

@@ -1,10 +1,10 @@
 @font-face {
 	font-family: "iconfont";
-	src: url("iconfont.eot?8dd8ec8cc141747dfd531ddff6697d6d?#iefix") format("embedded-opentype"),
-url("iconfont.woff2?8dd8ec8cc141747dfd531ddff6697d6d") format("woff2"),
-url("iconfont.woff?8dd8ec8cc141747dfd531ddff6697d6d") format("woff"),
-url("iconfont.ttf?8dd8ec8cc141747dfd531ddff6697d6d") format("truetype"),
-url("iconfont.svg?8dd8ec8cc141747dfd531ddff6697d6d#iconfont") format("svg");
+	src: url("iconfont.eot?434e06bda5626b134bd766b27ebffb5a?#iefix") format("embedded-opentype"),
+url("iconfont.woff2?434e06bda5626b134bd766b27ebffb5a") format("woff2"),
+url("iconfont.woff?434e06bda5626b134bd766b27ebffb5a") format("woff"),
+url("iconfont.ttf?434e06bda5626b134bd766b27ebffb5a") format("truetype"),
+url("iconfont.svg?434e06bda5626b134bd766b27ebffb5a#iconfont") format("svg");
 }
 
 .icon {
@@ -21,36 +21,45 @@ url("iconfont.svg?8dd8ec8cc141747dfd531ddff6697d6d#iconfont") format("svg");
 .icon-book:before {
 	content: "\f101";
 }
-.icon-comic:before {
+.icon-burger:before {
 	content: "\f102";
 }
-.icon-dropdown:before {
+.icon-comic:before {
 	content: "\f103";
 }
-.icon-game:before {
+.icon-company:before {
 	content: "\f104";
 }
-.icon-in_progress:before {
+.icon-dropdown:before {
 	content: "\f105";
 }
-.icon-info:before {
+.icon-game:before {
 	content: "\f106";
 }
-.icon-news:before {
+.icon-in_progress:before {
 	content: "\f107";
 }
-.icon-persons:before {
+.icon-info:before {
 	content: "\f108";
 }
-.icon-tvseries:before {
+.icon-news:before {
 	content: "\f109";
 }
-.icon-universe:before {
+.icon-person:before {
 	content: "\f10a";
 }
-.icon-video:before {
+.icon-persons:before {
 	content: "\f10b";
 }
-.icon-videogame:before {
+.icon-tvseries:before {
 	content: "\f10c";
+}
+.icon-universe:before {
+	content: "\f10d";
+}
+.icon-video:before {
+	content: "\f10e";
+}
+.icon-videogame:before {
+	content: "\f10f";
 }
