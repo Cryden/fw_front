@@ -74,12 +74,16 @@ h4
 .infostring
   +default
     display: inline-block
-    height: 20px
-    line-height: 20px
+    min-height: 30px
+    line-height: 22px
     font-size: 14px
-    color: $color-main
+    color: $color-main-light
     width: 100%
-    margin-bottom: 10px
+    padding-top: 4px
+  +desktop
+    min-height: 50px
+    padding-top: 14px
+    font-size: 16px
   &-icon 
     +default
       display: flex

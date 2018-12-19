@@ -1,6 +1,6 @@
 {
   "name": "fun-wiki",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "main": "index.js",
   "repository": "https://github.com/Cryden/fw_front.git",
   "author": "CRYDEsigN <Cryden_da@mail.ru>",
@@ -9,7 +9,6 @@
     "browser-sync": "^2.26.3",
     "browser-sync-webpack-plugin": "2.0.1",
     "cross-env": "^5.2.0",
-    "globule": "^1.2.1",
     "jquery": "^3.3.1",
     "laravel-mix": "^4.0.12",
     "resolve-url-loader": "2.3.1",
@@ -17,8 +16,7 @@
     "sass-loader": "7.*",
     "vue": "^2.5.21",
     "vue-resource": "^1.5.1",
-    "vue-template-compiler": "^2.5.21",
-    "webfonts-generator": "^0.4.0"
+    "vue-template-compiler": "^2.5.21"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",

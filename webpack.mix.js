@@ -1,24 +1,5 @@
 let mix = require('laravel-mix');
 
-const webfontsGenerator = require('webfonts-generator');
-
-var globule = require('globule');
-var filepaths = globule.find('./source/images/icons/*.svg');
-
-webfontsGenerator({
-    files: filepaths,
-    dest: './source/fonts/iconfont',
-    types: ['eot', 'woff2', 'woff', 'ttf', 'svg'],
-    html: true,
-}, function (error) {
-    if (error) {
-        console.log('Fail!', error);
-    } else {
-        console.log('Done!');
-    }
-})
-
-
 mix
     .setPublicPath('assets')
     .setResourceRoot('../')
