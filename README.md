@@ -11,6 +11,7 @@
 -   [ ] -   add organization page
 -   [ ] -   redesign fronend theme
 -   [ ] -   google tag setup (yMetrika and other)
+-   [ ] -   update and setup advertisment
 
 ### backend
 
