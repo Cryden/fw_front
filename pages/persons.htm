@@ -1,7 +1,7 @@
 ;;
 
-title = "authors"
-url = "/authors"
+title = "persons"
+url = "/persons"
 layout = "default"
 is_hidden = 0
 
@@ -39,7 +39,7 @@ function onStart()
             <div class="list">
         {% endif %}
         <div class="list_item">
-            <a href="/author/{{record.slug}}">
+            <a href="/person/{{record.slug}}">
                 {{ record.title }}
             </a>
         </div>
