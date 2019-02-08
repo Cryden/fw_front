@@ -14,11 +14,13 @@ function onStart()
     // Template
     $this['template'] = "two-columns";
 
-    $this['page_title'] = "Авторы";
+    $this['page_title'] = "Люди";
 
-    $this['records'] = Person::whereHas('personroles', function($query) {
-        $query->where('slug', '=', 'author');
-    })->orderBy('title', 'asc')->get();
+    // $this['records'] = Person::whereHas('personroles', function($query) {
+    //    $query->where('slug', '=', 'author');
+    // })->orderBy('title', 'asc')->get();
+
+    $this['records'] = Person::where('complete', '>', 60)->orderBy('title', 'asc')->get();
 }
 
 ==

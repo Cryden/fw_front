@@ -16,7 +16,7 @@ function onStart()
 
     $this['page_title'] = "Компании";
 
-    $this['records'] = Organisation::orderBy('title', 'asc')->get();
+    $this['records'] = Organisation::where('complete', '>', 60)->orderBy('title', 'asc')->get();
 }
 
 ==
@@ -37,7 +37,7 @@ function onStart()
             <div class="list">
         {% endif %}
         <div class="list_item">
-            <a href="/organisations/{{record.slug}}">
+            <a href="/organisation/{{record.slug}}">
                 {{ record.title }}
             </a>
         </div>
