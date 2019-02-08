@@ -1,0 +1,46 @@
+;;
+
+title = "tesbooks"
+url = "/:universe/books/"
+layout = "default"
+is_hidden = 0
+
+==
+
+use Fw\Backend\Models\Universe as Universe;
+use \fw\Backend\Models\BookEdition as BookEdition;
+
+function onStart()
+{
+    // Template
+    $this['template'] = "two-columns";
+
+    $this['page_title'] = "Books";
+
+    $this['records'] = BookEdition::whereHas('universes', function($query) {
+        $query->where('slug', '=',  $this->param('universe'));
+    })->orderBy('title', 'asc')->get();
+
+    $this['universe'] = $this->param('universe');
+
+    // $this['records'] = Person::whereHas('personroles', function($query) {
+    //    $query->where('slug', '=', 'author');
+    // })->orderBy('title', 'asc')->get();
+}
+
+==
+{##}
+
+{% partial 'layout/page-title' %}
+
+{% put content %}
+
+    {% for record in records %}
+        <div class="list_item">
+            <a href="/{{ universe }}/books/{{record.slug}}">
+                {{ record.title }}
+            </a>
+        </div>
+    {% endfor %}
+
+{% endput %}
