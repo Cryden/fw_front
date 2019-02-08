@@ -7,7 +7,7 @@ mix
     .js('./source/js/main.js', 'js')
     .sass('./source/sass/styles.sass', 'css')
     .options({
-        processCssUrls: false
+        processCssUrls: true
     })
 
     .browserSync({
