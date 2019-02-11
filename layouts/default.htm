@@ -21,14 +21,15 @@ security = "all"
     {% partial "meta/verification" %}
     {% partial "meta/og_meta" %}
     {% partial "meta/favicon" %}
+    <base href="{{ '/'|theme }}">
     <link rel="manifest" href="../manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i&amp;subset=cyrillic-ext"
         rel="stylesheet">
-    {# <link rel="stylesheet" href="{{ 'assets/css/styles.css'|theme|inline }}"> #}
-    {% set css = '/assets/css/styles.css'|theme %}
-    {% set cssStyle = {'styles':css} %}
+    {# <link rel="stylesheet" href="{{ 'assets/css/styles.css'|theme }}"> #}
+    {# {% set css = '/assets/css/styles.css'|theme %} #}
+    {# {% set cssStyle = {'styles':css} %} #}
     <style>{{ ['assets/css/styles.css']|inline }}</style>
     {% styles %}
 
