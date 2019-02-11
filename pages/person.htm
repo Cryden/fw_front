@@ -21,7 +21,7 @@ function onStart()
     }
 
     // SEO title
-    $this['page_title'] = $this['record']->title.' / Персоны';
+    $this['page_title'] = $this['record']->title.' | Люди ';
 
     // Shema.org properties
     $this['shema_type'] = "person/shema";
@@ -54,21 +54,20 @@ function onStart()
                         {{ record.name }}
                     {% endif %}
                 </div>
-                {% if record.personroles is not empty %}
-                    <div class="person-role">
-                        {% for personrole in record.personroles %}
-                            {{ personrole.title }}{% if not loop.last %}, {% endif %}
-                        {% endfor %}
-                    </div>
-                {% endif %}
             </div>
             <div class="person__info">
-                <div class="person__info--sticky">
                     <div class="person-photo">
                         <img src="{{ record.photo|media }}" />
                     </div>
                     <div class="person-info">
                         <h3> Информация </h3>
+                        {% if record.personroles is not empty %}
+                            <div class="infostring">Род деятельности:
+                                {% for personrole in record.personroles %}
+                                    {{ personrole.title }}{% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                         {% if record.persons is not empty %}
                             <div class="infostring">Псевдонимы:
                                 {% for person in record.persons %}
@@ -85,14 +84,12 @@ function onStart()
                             </div>
                         {% endif %}
                     </div>
-                </div>
             </div>
-            <div class="person__description">
-                <h2> Биография </h2>
-                {{ record.bio|raw }}
-            </diV>
-
         </div>
+        <div class="person__description">
+            <h2> Биография </h2>
+                {{ record.bio|raw }}
+        </diV>
     {% endif %}
 
     {% if record.universes is not empty %}
